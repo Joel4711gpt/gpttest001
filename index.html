@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Willkommens-App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Willkommens-App</h1>
+    <form id="greeting-form" aria-describedby="hint">
+      <label for="first-name">Vorname</label>
+      <input id="first-name" name="first-name" type="text" autocomplete="given-name" required />
+      <p id="hint" class="hint">Bitte gib deinen Vornamen ein und klicke auf Speichern.</p>
+      <button type="submit">Speichern</button>
+    </form>
+    <p id="response" role="status" aria-live="polite"></p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
