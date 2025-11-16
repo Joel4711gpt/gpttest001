@@ -74,3 +74,52 @@ button:active {
   font-weight: 600;
   text-align: center;
 }
+
+#continue-button[hidden] {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1.5rem;
+  backdrop-filter: blur(2px);
+}
+
+.overlay[hidden] {
+  display: none;
+}
+
+.overlay-content {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  max-width: 480px;
+  width: min(90vw, 480px);
+}
+
+.overlay-content h2 {
+  margin: 0;
+}
+
+#bounce-canvas {
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.stop {
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+}
+
+.stop:hover,
+.stop:focus {
+  box-shadow: 0 8px 20px rgba(221, 36, 118, 0.4);
+}

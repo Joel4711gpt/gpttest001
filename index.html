@@ -16,7 +16,22 @@
       <button type="submit">Speichern</button>
     </form>
     <p id="response" role="status" aria-live="polite"></p>
+    <button id="continue-button" type="button" hidden>Weiter</button>
   </main>
+  <section
+    id="bounce-overlay"
+    class="overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="bounce-title"
+    hidden
+  >
+    <div class="overlay-content">
+      <h2 id="bounce-title">Springender Ball</h2>
+      <canvas id="bounce-canvas" width="420" height="260" aria-hidden="true"></canvas>
+      <button id="stop-button" type="button" class="stop">Stop</button>
+    </div>
+  </section>
   <script src="app.js"></script>
 </body>
 </html>
