@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const overlay = document.getElementById('bounce-overlay');
   const canvas = document.getElementById('bounce-canvas');
   const stopButton = document.getElementById('stop-button');
+  const collisionDisplay = document.getElementById('collision-count');
 
   const context = canvas.getContext('2d');
   const initialVelocity = { vx: 3.2, vy: 2.4 };
@@ -17,6 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
     vy: initialVelocity.vy,
   };
   let animationFrameId = null;
+  let collisionCount = 0;
+
+  const updateCounter = () => {
+    collisionDisplay.textContent = String(collisionCount);
+  };
+
+  const incrementCounter = () => {
+    collisionCount += 1;
+    updateCounter();
+  };
 
   const clearAnimation = () => {
     if (animationFrameId !== null) {
@@ -43,11 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (ball.x + ball.radius >= canvas.width || ball.x - ball.radius <= 0) {
       ball.vx *= -1;
       ball.x = Math.min(Math.max(ball.x, ball.radius), canvas.width - ball.radius);
+      incrementCounter();
     }
 
     if (ball.y + ball.radius >= canvas.height || ball.y - ball.radius <= 0) {
       ball.vy *= -1;
       ball.y = Math.min(Math.max(ball.y, ball.radius), canvas.height - ball.radius);
+      incrementCounter();
     }
 
     draw();
@@ -59,6 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ball.y = canvas.height / 2;
     ball.vx = initialVelocity.vx;
     ball.vy = initialVelocity.vy;
+    collisionCount = 0;
+    updateCounter();
     overlay.hidden = false;
     draw();
     clearAnimation();

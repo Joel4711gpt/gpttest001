@@ -115,6 +115,24 @@ button:active {
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
+.overlay-controls {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.collision-counter {
+  margin: 0;
+  font-weight: 600;
+  color: #1e3c72;
+}
+
+.collision-counter span {
+  font-variant-numeric: tabular-nums;
+}
+
 .stop {
   background: linear-gradient(135deg, #ff512f, #dd2476);
 }

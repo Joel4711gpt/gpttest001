@@ -29,7 +29,12 @@
     <div class="overlay-content">
       <h2 id="bounce-title">Springender Ball</h2>
       <canvas id="bounce-canvas" width="420" height="260" aria-hidden="true"></canvas>
-      <button id="stop-button" type="button" class="stop">Stop</button>
+      <div class="overlay-controls">
+        <p class="collision-counter" aria-live="polite">
+          Stöße: <span id="collision-count">0</span>
+        </p>
+        <button id="stop-button" type="button" class="stop">Stop</button>
+      </div>
     </div>
   </section>
   <script src="app.js"></script>
